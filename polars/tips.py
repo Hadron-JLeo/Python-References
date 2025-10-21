@@ -13,3 +13,13 @@ buys = buys.with_columns(
 # DropNAS
 
 buys = buys.drop_nulls(subset=["ID", "Date"])
+
+
+# Join vs asof_join
+# Join is exact
+
+"""
+An as-of join matches rows based on nearest key values in time (or order) — not exact equality.
+It’s used for time series, event streams, or irregular observations.
+"""
+
