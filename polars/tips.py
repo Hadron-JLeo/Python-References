@@ -5,6 +5,11 @@ df = df.with_columns(
 )
 
 # But more commonly:
-invoices = invoices.with_columns(
+buys = buys.with_columns(
     pl.col("BuyDate").str.strptime(pl.Date, "%Y-%m-%d") # instead of pl.Datetime
 )
+
+
+# DropNAS
+
+buys = buys.drop_nulls(subset=["ID", "Date"])
